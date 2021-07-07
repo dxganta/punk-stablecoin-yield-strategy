@@ -14,9 +14,9 @@ On withdrawal, the strategy first unstakes the LP tokens from the Rewards Gauge,
 
 ## [Expected Yield](https://curve.fi/susdv2)
 
-Fees APY = 1.34%
-CRV Rewards APY = 2.73%
-SNX Rewards APY = 1.83% 
+Fees APY = 1.34%<br>
+CRV Rewards APY = 2.73%<br>
+SNX Rewards APY = 1.83% <br>
 
 <strong>Total APY = 5.9%</strong>
 
@@ -60,7 +60,7 @@ To deploy the Strategy in a development environment:
 Deployment will deploy the strategy
 
 
-5. Run the test deployment in the console and interact with it
+3. Run the test deployment in the console and interact with it
 ```python
   brownie console
   deployed = run("deploy")
