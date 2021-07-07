@@ -7,13 +7,16 @@ def main():
 
 
 def deploy():
+    dai = "0x6B175474E89094C44Da98b954EedeAC495271d0F"
     deployer = accounts[0]
 
     strategy = StableCoinStrategy.deploy({"from": deployer})
-    strategy.initialize()
-    dai = strategy.dai()
+    strategy.initialize(
+        dai,
+        deployer
+    )
 
-    # TODO: Uniswap some DAI Tokens to deployer for testing
+    # Uniswap some DAI Tokens to deployer for testing
     router = Contract.from_explorer(
         "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")
     router.swapExactETHForTokens(
