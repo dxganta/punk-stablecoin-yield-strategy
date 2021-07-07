@@ -60,6 +60,7 @@ contract StableCoinStrategy is ModelInterface, ModelStorage {
         return underlyingBalanceInModel().add(IRewardsOnlyGauge(CURVE_REWARDS_GAUGE).balanceOf(address(this)));
     }
 
+    /// @dev Returns the total amount of LP tokens held by strategy
     function balanceOfPool() public view returns (uint256) {
         return IRewardsOnlyGauge(CURVE_REWARDS_GAUGE).balanceOf(address(this));
     }
@@ -102,7 +103,7 @@ contract StableCoinStrategy is ModelInterface, ModelStorage {
         // transfer
         IERC20Upgradeable(token(0)).transfer(forge(), underlyingBalanceInModel());
 
-        // emit Withdraw(amount, forge(), block.timestamp);
+        emit Withdraw(underlyingBalanceInModel(), forge(), block.timestamp);
     }
 
     /**

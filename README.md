@@ -78,8 +78,8 @@ Deployment will deploy the strategy
   }
   >>>
 
-  ## Deploy also uniswaps want to the deployer (accounts[0]), so you have funds to play with!
-  >>> deployed.want.balanceOf(a[0])
+  ## Deploy also uniswaps want to the strategy (accounts[0])
+  >>> deployed.strategy.underlyingBalanceInModel()
   240545908911436022026
 
 ```
